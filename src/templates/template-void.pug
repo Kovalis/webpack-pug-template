@@ -1,0 +1,32 @@
+include mixins.pug
+
+doctype html
+html(lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(name='google', content='notranslate')
+    meta(name='HandheldFriendly', content='true')
+    meta(name='robots', content='index, follow')
+
+    title Meteor - Auto
+
+    //- link(rel="stylesheet", href="style.css")
+    //- block meta
+    //-   meta(name="description", content="metaDescription")
+    //-   meta(name="keywords", content="metaKeywords")
+
+    //- block head
+    //-   //- link(rel="stylesheet", href= src.css + 'style.css')
+    //-   script
+    //-     include ../js/script.js
+
+  body.body    
+    block content

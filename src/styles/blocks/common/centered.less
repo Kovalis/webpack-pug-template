@@ -1,0 +1,164 @@
+@import "descriptions";
+
+.centered {
+  .f-column(16);
+  align-items: center;
+  max-width: 686px;
+  margin-inline: auto;
+  margin-bottom: @offset56;
+
+  @media @tablet {
+    max-width: 542px;
+    margin-bottom: @offset40;
+  }
+
+  @media @l-mobile {
+    max-width: 100%;
+    margin-bottom: @offset32;
+  }
+
+  &--contact {
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      margin-bottom: @offset16;
+    }
+
+    @media @l-mobile {
+      align-items: start;
+      gap: 0;
+      margin-bottom: @offset8;
+    }
+  }
+
+  &--404 {
+    max-width: 833px;
+    gap: 0;
+  }
+
+  .send-success&, .send-error& {
+    display: none;
+  }
+
+  &__blocks-container {
+    .f-column(20);
+
+    @media @tablet {
+      gap: @offset16;
+    }
+
+    @media @l-mobile {
+      flex-direction: row;
+      margin-top: @offset16;
+      width: 100%;
+    }
+  }
+
+  &__block {
+    .f-column();
+    align-items: center;
+
+    @media @l-mobile {
+      align-items: start;
+
+      .centered__blocks-container & {
+        width: 50%;
+      }
+    }
+  }
+
+  &__block-title {
+    color: @black-70;
+    text-align: center;
+    padding-block: @offset6;
+    font-weight: 500;
+
+    @media @tablet {
+      .fs13-16();
+    }
+
+    @media @l-mobile {
+      text-align: left;
+    }
+  }
+
+  &__block-val {
+    .fs18-24();
+    font-weight: 600;
+    text-align: center;
+    padding-block: @offset6;
+
+    @media @tablet {
+      .fs14-20();
+    }
+
+    @media @l-mobile {
+      text-align: left;
+      padding-block: @offset8;
+    }
+  }
+
+  &__main-title {
+    text-align: center;
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      margin-bottom: @offset20;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset16;
+    }
+
+    .section--about & {
+      align-self: start;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      margin-bottom: @offset32;
+    }
+
+    .section--about & {
+      align-self: start;
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    .fs18-32();
+    text-align: center;
+
+    @media @tablet {
+      .fs16-24();
+      font-weight: 500;
+    }
+
+    @media @l-mobile {
+      text-align: left;
+    }
+  }
+
+  &__text {
+    .fs18-32();
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      .fs15-24();
+      margin-bottom: @offset20;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset16;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+

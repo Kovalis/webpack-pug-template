@@ -1,0 +1,93 @@
+//- Все примеси в этом файле должны начинаться c имени блока (aside)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin aside(mods)
+
+    //- Принимает:
+    //-   mods    {string} - список модификаторов
+    //- Вызов:
+            +aside('some-mod')
+
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+                allMods = allMods + ' aside--' + modsList[i].trim();
+            }
+        }
+
+    aside.overlay.js-overlay(aria-label='Site overlays')
+        nav.d-menu.js-overlay-item(aria-label='меню по направлениям' data-overlay='d-menu')
+            .d-menu__header
+                .d-menu__header-search.input__box.input__box--search.js-input-box
+                    input.input.input--search.js-input.js-input-search.search-panel__input(placeholder='Поиск' aria-label='строка поиска' type='text')
+                    
+                    button.input__search-btn.js-input-search-btn(type='button')
+                        svg.icon.icon--20
+                            use(xlink:href='/assets/sprite/sprite.svg#search-xl')
+
+                    button.input__erase-btn.js-input-erase-btn(type='button')
+                        svg.icon.icon--20
+                            use(xlink:href='/assets/sprite/sprite.svg#cross')
+
+                a.d-menu__home-btn.btn.btn--primary.js-d-menu-home-btn(href='#')
+                    svg.icon.icon--24
+                        use(xlink:href='/assets/sprite/sprite.svg#home')
+
+            .d-menu__tabs-container.js-tabs-container
+                .d-menu__tab-container(data-tabs-group='directions')
+                    a.d-menu__tab.d-menu__tab--lifts.js-d-menu-tab(href='#' data-link='' data-tab='lifts')
+                        svg.icon.icon--24
+                            use(xlink:href='/assets/sprite/sprite.svg#lifts')
+                        | Вертикальный транспорт
+
+                    button.d-menu__tab-btn
+
+                    .d-menu__tab-dock(data-dock-group='directions' data-dock='lifts')
+                        | 1
+
+                .d-menu__tab-container(data-tabs-group='directions')
+                    a.d-menu__tab.d-menu__tab--tires.js-d-menu-tab(href='#' data-link='' data-tab='tires')
+                        svg.icon.icon--24
+                            use(xlink:href='/assets/sprite/sprite.svg#tires')
+                        | Производство шин
+                        
+                    button.d-menu__tab-btn
+
+                    .d-menu__tab-dock(data-dock-group='directions' data-dock='tires')
+                        | 2
+
+                .d-menu__tab-container(data-tabs-group='directions')
+                    a.d-menu__tab.d-menu__tab--thermo.js-d-menu-tab(href='#' data-link='' data-tab='thermo')
+                        svg.icon.icon--24
+                            use(xlink:href='/assets/sprite/sprite.svg#thermo-b')
+                        | Термотехника
+                    button.d-menu__tab-btn
+
+                    .d-menu__tab-dock(data-dock-group='directions' data-dock='thermo')
+                        | 3
+
+                .d-menu__tab-container(data-tabs-group='directions')
+                    a.d-menu__tab.d-menu__tab--instrum.js-d-menu-tab(href='#' data-link='' data-tab='instrum')
+                        svg.icon.icon--24
+                            use(xlink:href='/assets/sprite/sprite.svg#instrum')
+                        | Электроинструменты
+                        
+                    button.d-menu__tab-btn
+
+                    .d-menu__tab-dock(data-dock-group='directions' data-dock='instrum')
+                        | 4
+
+                .d-menu__tab-container(data-tabs-group='directions')
+
+                    a.d-menu__tab.d-menu__tab--auto.js-d-menu-tab(href='#' data-link='' data-tab='auto')
+                        svg.icon.icon--24
+                            use(xlink:href='/assets/sprite/sprite.svg#auto')
+                        |  Автокомпоненты
+
+                    button.d-menu__tab-btn
+
+                    .d-menu__tab-dock(data-dock-group='directions' data-dock='auto')
+                        | 5

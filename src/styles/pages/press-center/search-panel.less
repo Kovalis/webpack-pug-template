@@ -1,0 +1,46 @@
+@import "descriptions";
+
+.search-panel {
+  &__tabs-container {
+    display: flex;
+    gap: @offset8;
+    padding-block: 1px;
+  }
+
+  &__inputs-container {
+    display: flex;
+    justify-content: end;
+    flex: 1;
+    gap: @offset20;
+
+    @media @tablet {
+      width: 100%;
+    }
+
+    @media @l-mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__input-box {
+    height: 44px;
+    width: 70%;
+    max-width: 451px;
+
+    @media @tablet {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__input {
+  }
+
+  &__select {
+    .width-height(255, 44);
+
+    @media @l-mobile {
+      width: 100%;
+    }
+  }
+}

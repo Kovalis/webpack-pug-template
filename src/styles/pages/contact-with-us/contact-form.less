@@ -1,0 +1,239 @@
+@import "descriptions";
+
+.contact-form {
+  align-items: start;
+  gap: 0;
+
+  &__title {
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      margin-bottom: @offset20;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset16;
+    }
+  }
+
+  &__input-label {
+    .fs14-20();
+    display: block;
+    padding: 4px;
+    margin-bottom: 4px;
+  }
+
+  &__input-box {
+    height: auto;
+    display: flex;
+    position: relative;
+
+    &--textarea {
+      width: 100%;
+      margin-bottom: 54px;
+
+      @media @tablet {
+        margin-bottom: @offset40;
+      }
+
+      @media @l-mobile {
+        margin-bottom: @offset32;
+      }
+    }
+
+    .error-phone& {
+      &::after {
+        .fs10-14();
+        font-weight: 400;
+        color: @red-error;
+        position: absolute;
+        left: 0;
+        bottom: -18px;
+        content: 'Введите номер в формате +7(123)456-78-90';
+        white-space: nowrap;
+      }
+    }
+
+    .error-mail& {
+      &::after {
+        .fs10-14();
+        font-weight: 400;
+        color: @red-error;
+        position: absolute;
+        left: 0;
+        top: 47px;
+        content: 'Введите адрес в формате user@domain.ru';
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__input {
+    height: 44px;
+    padding-inline: @offset24;
+
+    &--textarea {
+      width: 100%;
+      height: 117px;
+      padding: @offset14 @offset24;
+    }
+  }
+
+  &__rows {
+    display: flex;
+    gap: @offset20;
+    flex-wrap: wrap;
+    margin-bottom: @offset56;
+
+    @media @tablet {
+      gap: @offset16;
+      margin-bottom: @offset20;
+    }
+  }
+
+  &__input-elem {
+    position: relative;
+
+    &--first-row {
+      width: calc((100% - 2 * @offset20) / 3);
+
+      @media @tablet {
+        width: calc((100% - @offset16) / 2);
+      }
+
+      @media @l-mobile {
+        width: 100%;
+      }
+    }
+
+    &--second-row {
+      width: 48.5%;
+
+      @media @tablet {
+        width: calc((100% - @offset16) / 2);
+      }
+
+      @media @l-mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__input-placeholder {
+    .absY-alignment();
+    color: @black-30;
+    font-weight: 500;
+    left: @offset24;
+    pointer-events: none;
+
+    &.error {
+      color: @red-error;
+
+      &::after {
+        .fs10-14();
+        font-weight: 400;
+        color: @red-error;
+        white-space: nowrap;
+        position: absolute;
+        bottom: -28px;
+        left: -@offset24;
+        content: 'Это обязательное поле для заполнения';
+      }
+    }
+
+    &--textarea {
+      top: 14px;
+      padding-right: @offset24;
+      transform: unset;
+
+      &.error {
+        &::after {
+          top: 108px;
+        }
+      }
+    }
+
+
+  }
+
+  &__input-placeholder-number {
+  }
+
+  &__agree {
+    .f-between(24);
+
+    @media @tablet {
+      align-items: start;
+      flex-direction: column;
+      gap: @offset40;
+    }
+
+    @media @l-mobile {
+      gap: @offset32;
+    }
+  }
+
+  &__agree-label {
+    padding-left: @offset28;
+    max-width: 70%;
+
+    @media @tablet {
+      .fs14-20();
+      max-width: 100%;
+    }
+  }
+
+  &__agree-input {
+  }
+
+  &__agree-text {
+    position: relative;
+
+    &::before {
+      .square(18);
+      position: absolute;
+      top: -2px;
+      left: -@offset28;
+      content: '';
+      border: 1px solid @black;
+
+      .contact-form__agree-input:focus-visible + & {
+        box-shadow: 0 0 0 2px @black-30;
+      }
+    }
+
+    &::after {
+      .square(12);
+      .transition(background-color);
+      background-color: transparent;
+      position: absolute;
+      top: 2px;
+      left: -@offset24;
+      content: '';
+
+      .contact-form__agree-input:checked + & {
+        background-color: @black;
+      }
+    }
+  }
+
+  &__agree-label-link {
+    display: inline;
+    text-decoration: underline;
+  }
+
+  &__agree-btn {
+    width: 177px;
+    height: 44px;
+    max-width: unset;
+
+    @media @tablet {
+      width: 170px;
+    }
+
+    @media @l-mobile {
+      width: 168px;
+    }
+  }
+}
+

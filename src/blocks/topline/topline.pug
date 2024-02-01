@@ -1,0 +1,143 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin topline(mods)
+
+    //- Принимает:
+    //-   mods    {string} - список модификаторов
+    //- Вызов:
+            +header("some-mod")
+
+    -
+        // список модификаторов
+        var allMods = "";
+        if(typeof(mods) !== "undefined" && mods) {
+            var modsList = mods.split(",");
+            for (var i = 0; i < modsList.length; i++) {
+                allMods = allMods + " header--" + modsList[i].trim();
+            }
+        }
+
+    .topline.topline--white.js-topline
+        .wrap
+            .topline__container
+                .topline__directions-container
+                    a.topline__logo-link.accessibility-link(href="index.html")
+                        svg.topline__logo
+                            use(xlink:href="/assets/sprite/sprite.svg#auto-red")
+                    button.topline__directions-btn.js-topline-directions-btn.js-show-overlay-btn.accessibility-link.btn.btn--secondary(data-overlay="d-menu", aria-label="кнопка открытия меню направлений", type="button")
+                        svg.topline__directions-btn-icon.icon.icon--16
+                            use(xlink:href="/assets/sprite/sprite.svg#btn-square")
+                        span
+                            | Все направления
+
+
+                nav.topline__nav.js-topline-nav(aria-label="основное меню сайта")
+                    .topline__nav-search-container
+                        .topline__nav-search-box.input__box.input__box--search.js-input-box
+                        input.input.input--search.js-input.js-input-search.search-panel__input(placeholder="Поиск", aria-label="строка поиска", type="text")
+                        button.input__search-btn.js-input-search-btn(type="button")
+                            svg.icon.icon--20
+                                use(xlink:href="/assets/sprite/sprite.svg#search-xl")
+                        button.input__erase-btn.js-input-erase-btn(type="button")
+                            svg.icon.icon--20
+                                use(xlink:href="/assets/sprite/sprite.svg#cross")
+                    .topline__nav-item-container
+                        a.topline__nav-item.topline__nav-item--with-submenu.js-topline-nav-item-with-submenu.accessibility-link(href="catalog.html")
+                            | Онлайн-подбор
+                        .topline__sub-nav-1.js-topline-sub-nav-1
+                            .topline__sub-nav-1-tabs.js-topline-sub-nav-tabs
+                                .topline__sub-nav-item-shell(data-menu-tab="meteor-spark-plugs")
+                                    a.topline__sub-nav-1-item.topline__sub-nav-1-item--with-submenu.js-topline-sub-nav-1-item-with-submenu(href="meteor-spark-plugs.html")
+                                        | Свечи зажигания Meteor
+                                    button.topline__sub-nav-item-open-btn.js-topline-sub-nav-item-open-btn
+                                .topline__sub-nav-item-shell(data-menu-tab="ez-spark-plugs")
+                                    a.topline__sub-nav-1-item.topline__sub-nav-1-item--with-submenu.js-topline-sub-nav-1-item-with-submenu(href="ez-spark-plugs.html")
+                                        | Свечи зажигания ЭЗ
+                                    button.topline__sub-nav-item-open-btn.js-topline-sub-nav-item-open-btn
+                                    a.topline__sub-nav-1-item(href="tech-ceramics.html")
+                                        | Техническая керамика
+                            .topline__sub-nav-2-shell
+                            .topline__sub-nav-2(data-menu-dock="meteor-spark-plugs")
+                                button.topline__sub-nav-back-btn.js-topline-sub-nav-back-btn
+                                svg.icon.icon--16
+                                use(xlink:href="/assets/sprite/sprite.svg#arrow-back")
+                                |                       &Ncy;&acy;&zcy;&acy;&dcy;
+                                .topline__sub-nav-item-shell
+                                    a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="car-spark-plugs.html")
+                                        | Автомобильные свечи зажигания
+                                    a.topline__sub-nav-2-item.accessibility-link(href="nickel-spark-plugs.html")
+                                        | С&nbsp;никелем
+                                    a.topline__sub-nav-2-item.accessibility-link(href="yttrium-spark-plug.html")
+                                        | С&nbsp;иттрием
+                                    a.topline__sub-nav-2-item.accessibility-link(href="multi-electrode-spark-plugs.html")
+                                        | Многоэлектродные
+                                    a.topline__sub-nav-2-item.accessibility-link(href="precious-metals-spark-plugs.html")
+                                        | С&nbsp;драгметаллами
+                                .topline__sub-nav-item-shell
+                                    a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="#")
+                                        | Водный и&nbsp;мототранспорт
+                                    a.topline__sub-nav-2-item.accessibility-link(href="motor-vehicles-spark-plugs.html")
+                                        | Для&nbsp;мототранспорта
+                                    a.topline__sub-nav-2-item.accessibility-link(href="water-transport-spark-plugs.html")
+                                        | Для&nbsp;водного транспорта
+                                .topline__sub-nav-item-shell
+                                    a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="#")
+                                        | Садовая техника и&nbsp; инструменты
+                                    a.topline__sub-nav-2-item.accessibility-link(href="water-transport-spark-plugs.html")
+                                        | Для&nbsp;малых двигателей
+                                .topline__sub-nav-item-shell
+                                    a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="#")
+                                        | Индустриальные свечи зажигания
+                                    a.topline__sub-nav-2-item.accessibility-link(href="water-transport-spark-plugs.html")
+                                        | Для&nbsp;малых двигателей
+                            .topline__sub-nav-2(data-menu-dock="ez-spark-plugs")
+                            button.topline__sub-nav-back-btn.js-topline-sub-nav-back-btn
+                                svg.icon.icon--16
+                                    use(xlink:href="/assets/sprite/sprite.svg#arrow-back")
+                                        |  Назад
+                            a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="ez-standard-spark-plugs.html")
+                                | Стандарт
+                            a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="ez-standard-lpg-spark-plugs.html")
+                                | Meteor Phaeton
+                            a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="ez-standard-lpg-spark-plugs.html")
+                                | Стандарт LPG
+                            a.topline__sub-nav-2-item.topline__sub-nav-2-item--title.accessibility-link(href="ez-yttrium-spark-plugs.html")
+                                | Yttrium
+                    a.topline__nav-item.accessibility-link(href="buy.html")
+                        | Где купить
+                    .topline__nav-item-container
+                        a.topline__nav-item.topline__nav-item--with-submenu.js-topline-nav-item-with-submenu.accessibility-link(href="catalog.html")
+                            | Техническая поддержка
+                        .topline__sub-nav-1.js-topline-sub-nav-1
+                            .topline__sub-nav-1-tabs.js-topline-sub-nav-tabs
+                                a.topline__sub-nav-1-item(href="tech-ceramics.html")
+                                    | Обучения
+                                a.topline__sub-nav-1-item(href="tech-ceramics.html")
+                                    | Статьи
+                                a.topline__sub-nav-1-item(href="tech-ceramics.html")
+                                    | Полезные советы
+                                a.topline__sub-nav-1-item(href="tech-ceramics.html")
+                                    | Инструкции
+                                a.topline__sub-nav-1-item(href="tech-ceramics.html")
+                                    | Библиотека
+                    .topline__nav-item-container
+                        a.topline__nav-item.topline__nav-item--with-submenu.js-topline-nav-item-with-submenu.accessibility-link(href="catalog.html")
+                            | О&nbsp;компании
+                        .topline__sub-nav-1.js-topline-sub-nav-1
+                            .topline__sub-nav-1-tabs.js-topline-sub-nav-tabs
+                                a.topline__sub-nav-1-item(href="company-history.html")
+                                    | История компании
+                                a.topline__sub-nav-1-item(href="sout.html")
+                                    | СОУТ
+                    a.topline__nav-item.accessibility-link(href="press-releases.html")
+                        | Новости
+                    a.topline__nav-item.accessibility-link(href="contacts.html")
+                        | Контакты
+
+                a(href="search.html", class="topline__search-btn js-topline-search-btn accessibility-link")
+                    svg(class="topline__search-btn-icon icon icon--24")
+                        use(xlink:href="/assets/sprite/sprite.svg#search")
+
+                button(type="button", title="открыть выпадающее меню", class="topline__burger js-topline-burger accessibility-link")
+                    span.topline__burger-line

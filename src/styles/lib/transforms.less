@@ -1,0 +1,63 @@
+@import "descriptions";
+
+.radius(@r: 4) {
+  border-radius: @r + 0px;
+  -moz-outline-radius: @r + 0px;
+}
+
+.top-radius(@r: 4) {
+  border-radius: @r + 0px @r + 0px 0 0;
+}
+
+.bottom-radius(@r: 4) {
+  border-radius: 0 0 @r + 0px @r + 0px;
+}
+
+.left-radius(@r: 4) {
+  border-radius: @r + 0px 0 0 @r + 0px;
+}
+
+.right-radius(@r: 4) {
+  border-radius: 0 @r + 0px @r + 0px 0;
+}
+
+.offset(@x: -50%, @y: -50%) {
+  transform+_: translate(@x, @y);
+}
+
+.offsetX(@x: -50%) {
+  transform+_: translateX(@x);
+}
+
+.offsetY(@y: -50%) {
+  transform+_: translateY(@y);
+}
+
+.scale(@scale) {
+  transform+_: scale(@scale);
+}
+
+.scaleX(@scale) {
+  transform+_: scaleX(@scale);
+}
+
+.rotate(@angle) {
+  transform+_: rotate(@angle + 0deg);
+}
+
+.flipX() {
+  .scale(~"-1, 1");
+}
+
+.flipY() {
+  .scale(~"1, -1");
+}
+
+.hover(@start: @black, @end: @black-30) {
+  .transition(color);
+  color: @start;
+
+  &:hover {
+    color: @end;
+  }
+}

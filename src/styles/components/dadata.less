@@ -1,0 +1,58 @@
+@import "descriptions";
+
+.suggestions-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.suggestions-suggestions {
+  .radius(10) !important;
+  color: @black;
+  background: @white;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+  border: none;
+  cursor: pointer;
+  left: 0;
+  top: -3px;
+  min-width: 100%;
+  position: absolute;
+  z-index: 9999;
+  padding-block: 4px;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.suggestions-suggestion {
+  padding: @offset8 @offset16;
+  overflow: hidden;
+
+  &:hover {
+    @media @large-than-tablet {
+      background-color: @black-5;
+      color: @black;
+    }
+  }
+}
+
+.suggestions-selected {
+  background: transparent;
+
+  &:hover {
+    @media @large-than-tablet {
+      cursor: pointer;
+      background: transparent;
+    }
+  }
+}
+
+.suggestions-hint {
+  padding-inline: @offset16;
+}
+
+
+
+

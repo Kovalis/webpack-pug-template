@@ -1,0 +1,32 @@
+@import "descriptions";
+
+.spinner {
+  .circle(48);
+  display: block;
+  border-top: 3px solid @black-70;
+  border-right: 3px solid transparent;
+  animation: rotation 1s linear infinite;
+  flex: none;
+  margin: auto;
+
+  &--data {
+    margin-block: 40px;
+  }
+
+  &--calc-result {
+    .circle(28);
+
+    @media @tablet {
+      .circle(20);
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

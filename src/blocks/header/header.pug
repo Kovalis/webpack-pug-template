@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin header(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +header('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' header--' + modsList[i].trim();
+      }
+    }
+
+  header.header.js-header
+    .wrap
+      .banner
+        img.banner__img.banner__img--main-page(loading='lazy' src='./assets/img/banner.jpg' alt='')
+
+        .banner__text-content
+          p.banner__logo-title METEOR Auto
+
+          p.banner__subtitle
+            | Лидер по&nbsp;разработке и&nbsp;производству свечей зажигания для автомобильных, индустриальных, малогабаритных и&nbsp;других
+            
+            abbr(title='двигатель внутреннего сгорания') ДВС
+
+          .banner__btn-container
+            a.btn.btn--primary-inv(href='catalog.html')
+              | Онлайн-подбор
+
+            a.btn.btn--secondary-inv(href='buy.html') Где купить

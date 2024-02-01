@@ -1,0 +1,279 @@
+@import "descriptions";
+
+.buy {
+  display: flex;
+  gap: @offset20;
+
+  @media @tablet {
+    flex-direction: column;
+  }
+
+  &__form {
+    flex: 1 1 33%;
+
+    @media @tablet {
+    }
+  }
+
+  &__map-shell {
+    .radius(20);
+    flex: 1 67%;
+    overflow: hidden;
+    position: relative;
+
+    @media @tablet {
+      height: 400px;
+      flex: unset;
+    }
+
+    @media @s-tablet {
+      height: 360px;
+    }
+  }
+
+  &__map {
+    .absY-alignment();
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__map-toolbar {
+    .absX-alignment();
+    display: flex;
+    gap: @offset10;
+    width: max-content;
+    top: 10px;
+    z-index: 2;
+
+    @media @l-mobile {
+      gap: 4px;
+    }
+  }
+
+  &__map-toolbar-btn {
+    .radius();
+    background-color: @white;
+    box-shadow: 0 2px 6px 0 #0003;
+    padding: 4px 8px;
+
+    @media @l-mobile {
+      .fs12-16();
+    }
+  }
+}
+
+.buy-form {
+  &__label {
+    .fs14-20();
+    display: block;
+    padding: 4px;
+    margin-bottom: 4px;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__input-box {
+    margin-bottom: @offset20;
+  }
+
+  &__title {
+    margin-bottom: @offset16;
+  }
+
+  &__select {
+    margin-bottom: @offset20;
+
+    @media @tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    @media @tablet {
+      display: flex;
+      gap: @offset16;
+      flex-direction: row;
+      align-items: end;
+    }
+
+    @media @s-tablet {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__footer-item {
+    @media @tablet {
+      min-width: calc((100% - 2 * @offset16) / 3);
+    }
+
+    @media @s-tablet {
+      min-width: 100%;
+    }
+
+    &--btn {
+      min-width: 177px;
+      margin-top: @offset40;
+
+      @media @tablet {
+        min-width: calc((100% - 2 * @offset16) / 3);
+        margin-top: 0;
+      }
+
+      @media @s-tablet {
+        margin-top: @offset24;
+      }
+    }
+  }
+}
+
+.buy-map {
+  &__point {
+    .width-height(26, 26);
+    .smooth-show();
+    .transition(transform, .3s);
+    border-radius: 50%;
+    background-color: @light-blue;
+    border: 2px solid @white;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      .abs-alignment();
+      .circle(8);
+      background-color: @white;
+      content: '';
+    }
+
+    .skew & {
+      transform: scaleY(0.8);
+    }
+  }
+
+  &__geo {
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+.buy-map-point {
+  .active& {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__popup {
+    .transition(transform, .3s);
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+    display: none;
+
+    .active & {
+      .smooth-show();
+    }
+
+    .skew & {
+      transform: translateY(-20px);
+    }
+  }
+
+  &__shell {
+    .radius(8);
+    .transition(transform, .3s);
+    background-color: @white;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+    width: 435px;
+    position: relative;
+    padding: @offset24;
+    cursor: initial;
+
+    @media @tablet {
+      .abs-alignment();
+      padding: @offset20;
+    }
+
+    @media @l-mobile {
+      .absX-alignment();
+      top: unset;
+      bottom: 0;
+      width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding: @offset24 @offset16 68px;
+    }
+
+    &::after {
+      @media @l-mobile {
+        .width-height(24, 22);
+        .absX-alignment();
+        display: block;
+        rotate: 32deg;
+        transform: skew(-27deg);
+        top: -74px;
+        content: '';
+        border-bottom: 3px solid #fff;
+        border-right: 3px solid #fff;
+      }
+    }
+
+    .skew & {
+      transform: scaleY(1.25);
+    }
+
+    & a {
+      cursor: pointer;
+    }
+  }
+
+  &__close-btn {
+    .square(24);
+    position: absolute;
+    top: @offset24;
+    right: @offset24;
+  }
+
+  &__name {
+    padding-right: @offset56;
+    margin-bottom: 4px;
+  }
+
+  &__adress {
+    padding-block: 6px;
+    margin-bottom: @offset24;
+  }
+
+  &__info-row {
+    display: flex;
+    padding-block: @offset8;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    & + & {
+      border-top: 1px solid @line-gray;
+    }
+  }
+
+  &__info-title {
+    color: @black-70;
+    font-weight: 500;
+    padding-block: 6px;
+    width: 50%;
+  }
+
+  &__info-val {
+    font-weight: 600;
+    padding-block: 6px;
+    width: 50%;
+    white-space: initial !important;
+  }
+}

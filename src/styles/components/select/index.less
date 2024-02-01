@@ -1,0 +1,134 @@
+@import "descriptions";
+
+.select {
+  position: relative;
+  width: 100%;
+  flex: none;
+
+  &::after {
+    .transition(transform);
+    .offsetY(~'calc(50% - @{offset8})');
+    .triangle(bottom, 10, 6, inherit);
+    transform-origin: 50% 0 0;
+    top: calc(50% + 2px);
+    right: 20px;
+    content: '';
+    color: @black;
+
+    .active& {
+      .rotate(180deg);
+      color: @white;
+    }
+  }
+
+  &--secondary {
+    &::after {
+      color: @black;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #828282;
+    border-left: none;
+  }
+
+  &__current-btn {
+    .transition(border-color);
+    .transition(background-color);
+    .transition(color);
+    .fs16-20();
+    justify-content: start;
+    font-weight: 500;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    color: @black;
+    background-color: transparent;
+    border: 1px solid @line-gray;
+
+    &:hover {
+      @media @large-than-tablet {
+        background-color: inherit;
+        border-color: @black-50;
+      }
+    }
+
+    .search-panel__select & {
+      min-width: 100%;
+      justify-content: start;
+    }
+
+    .select.active & {
+      background-color: @black;
+      color: @white;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__current-text {
+    display: block;
+    width: max-content;
+    position: relative;
+    pointer-events: none;
+  }
+
+  &__options {
+    .radius(4);
+    background-color: @white;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: @offset12;
+    display: none;
+
+    .select.active & {
+      .smooth-show();
+    }
+  }
+
+  &__option {
+    .transition(background-color);
+    .transition(color);
+    .ellipsis();
+    color: @black;
+    width: 100%;
+    height: @offset48;
+    padding: @offset8;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        .radius(10);
+        background-color: @gray-bg;
+        color: @black-30;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__native {
+    .square(0);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "descriptions";
+
+.accessibility-link {
+  .transition(color);
+  .transition(box-shadow);
+
+  .accord__body-block-text & {
+    color: @black;
+  }
+
+  &:hover {
+    @media @large-than-tablet {
+      color: @black-70;
+    }
+  }
+
+  &:active {
+    @media @large-than-tablet {
+      color: @black-30;
+    }
+  }
+
+  &:focus-visible {
+    .radius();
+    box-shadow: 0 0 0 1px @black-30;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+}
+
+.inherit-link {
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline;
+}

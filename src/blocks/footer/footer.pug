@@ -1,0 +1,106 @@
+//- Все примеси в этом файле должны начинаться c имени блока (footer)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin footer(mods)
+
+    //- Принимает:
+    //-   mods    {string} - список модификаторов
+    //- Вызов:
+            +footer('some-mod')
+
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+                allMods = allMods + ' footer--' + modsList[i].trim();
+            }
+        }
+
+    footer.footer
+        .wrap.wrap--footer
+            a.footer__logo-link(href='index.html')
+                svg.footer__logo
+                    use(xlink:href='/assets/sprite/sprite.svg#auto-red')
+
+            .footer__nav-container
+                nav.footer__nav(aria-label='вспомогательное меню сайта')
+                    .footer__nav-block
+                        a.footer__nav-link-title.accessibility-link(href='catalog.html')
+                            | Каталог
+                            
+                        a.footer__nav-link.accessibility-link(href='meteor-spark-plugs.html')
+                            | Свечи зажигания Meteor
+
+                        a.footer__nav-link.accessibility-link(href='ez-spark-plugs.html')
+                            | Свечи зажигания ЭЗ
+
+                        a.footer__nav-link.accessibility-link(href='tech-ceramics.html')
+                            | Техническая керамика
+
+                        a.footer__nav-link-title.accessibility-link(href='about.html')
+                            | Где купить
+
+                        a.footer__nav-link-title.accessibility-link(href='technical-support.html')
+                            | Техническая поддержка
+
+                    .footer__nav-block
+                        a.footer__nav-link-title.accessibility-link(href='about.html')
+                            | О&nbsp;компании
+
+                        a.footer__nav-link.accessibility-link(href='company-history.html')
+                            | История компании
+
+                        a.footer__nav-link.accessibility-link(href='sout.html')
+                            | СОУТ
+
+                        a.footer__nav-link-title.accessibility-link(href='press-releases.html')
+                            | Новости
+
+                        a.footer__nav-link-title.accessibility-link(href='contacts.html')
+                            | Контакты
+
+            address.footer__info-data
+                p.footer__info-title Производство
+
+                a.footer__info-text.accessibility-link(href='contacts.html')
+                    | Проспект Фридриха Энгельса, 139, г. Энгельс, Саратовская обл., 413105
+
+                p.footer__info-title Отдел продаж и&nbsp;маркетинга
+
+                a.footer__info-text.accessibility-link(href='contacts.html')
+                    | Ленинградский проспект, д.&nbsp;15, стр.&nbsp;15, г. Москва, 125040, Россия
+
+                .footer__info-container
+                    .footer__info-block
+                        p.footer__info-title &Pcy;&ocy;&chcy;&tcy;&acy;
+                        a.footer__info-text.accessibility-link(href='mailto:auto@meteor.ru')
+                            | auto@meteor.ru
+
+                    .footer__info-block
+                        p.footer__info-title &Tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;
+                        a.footer__info-text.accessibility-link(href='tel:+78453564744')
+                            | +7 (845) 356-47-44
+
+            .footer__rules.footer__rules--guarantee
+                | * &mdash; Гарантийный срок на&nbsp;свечи зажигания METEOR и&nbsp;ЭЗ
+                | составляет 24&nbsp;месяца и&nbsp;исчисляется с&nbsp;даты продажи продукции
+                | конечному пользователю при наработке, не&nbsp;превышающей значений,
+                | указанных в&nbsp;соответствующей технической документации (ТУ) и/или ГОСТ
+                | Р&nbsp;53842-2010&nbsp;в зависимости от&nbsp;типа свечи при условии
+                | соблюдения правил эксплуатации, монтажа, транспортирования и&nbsp;хранения,
+                | установленных изготовителем Продукции.
+            .footer__rules
+                p.footer__rules-copyright
+                    | &copy;&nbsp;2024&nbsp;ООО &laquo;Энгельс Свечи зажигания&raquo;. Все права защищены.
+                .footer__rules-link-container
+                    a.footer__rules-link.accessibility-link(target='_blank' href='')
+                        | Политика обработки персональных данных
+                    a.footer__rules-link.accessibility-link(target='_blank' href='')
+                        | Политика обработки файлов cookies
+                    a.footer__rules-link.accessibility-link(target='_blank' href='')
+                        | Политики безопасности и&nbsp;ОС
+                    a.footer__rules-link.accessibility-link(target='_blank' href='https://synchro.pro/')
+                        | Сделано в
+                        img.footer__rules-synchro-logo(src='/assets/img/blocks/synchro-logo.png' alt='')

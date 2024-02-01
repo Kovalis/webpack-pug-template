@@ -1,0 +1,103 @@
+@import "descriptions";
+
+.d-menu {
+  display: none;
+
+  .show& {
+    .smooth-show();
+    .f-column();
+    border-top: 1px solid @line-gray;
+    background-color: @white;
+    position: fixed;
+    z-index: @z-index-dropdown;
+    top: 92px;
+    height: 100%;
+    padding: @offset24;
+
+    @media @tablet {
+      top: 56px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: @offset16;
+    margin-bottom: @offset28;
+  }
+
+  &__header-search {
+    display: none;
+
+    @media @tablet {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__home-btn {
+    .circle(44);
+    .f-center();
+    color: @white;
+    flex: none;
+    max-width: unset;
+    padding: 0;
+
+    svg {
+      flex: none;
+    }
+  }
+
+  &__tabs-container {
+    .f-column(16);
+  }
+
+  &__tab-container {
+  }
+
+  &__tab {
+    .transition(background-color);
+    display: flex;
+    gap: @offset12;
+    padding: @offset8 @offset12;
+    height: 40px;
+
+    .active& {
+      .radius(@offset24);
+      background-color: @shape-bg;
+    }
+  }
+
+  &__tab {
+    &--lifts {
+    }
+
+    &--tires {
+    }
+
+    &--thermo {
+    }
+
+    &--instrum {
+    }
+
+    &--auto {
+    }
+  }
+
+  &__tab-btn {
+    display: none;
+  }
+
+  &__tab-dock {
+    position: fixed;
+    top: @offset92;
+    left: 300px;
+    border-top: 1px solid @line-gray;
+    border-left: 1px solid @line-gray;
+    display: none;
+
+    .show& {
+      .smooth-show()
+    }
+  }
+}

@@ -1,0 +1,62 @@
+include mixins.pug
+
+doctype html
+html(lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(name='google', content='notranslate')
+    meta(name='HandheldFriendly', content='true')
+    meta(name='robots', content='index, follow')
+
+    //- Предзагрузка шрифтов или иных ресурсов
+    //- link(rel='preload', href= src.fonts + 'Lato-Regular.woff2', as='font', type='font/woff2', crossorigin='anonymous')
+    //- link(rel='preload', href= src.fonts + 'Lato-Semibold.woff2', as='font', type='font/woff2', crossorigin='anonymous')
+    //- link(rel='preload', href= src.fonts + 'Lato-Bold.woff2', as='font', type='font/woff2', crossorigin='anonymous')
+    //- link(rel='preload', href= src.fonts + 'Lato-Heavy.woff2', as='font', type='font/woff2', crossorigin='anonymous')
+
+    //- Фавиконки (https://realfavicongenerator.net)
+    //- link(rel='apple-touch-icon', sizes='180x180', href= src.img + 'favicon/apple-touch-icon.png')
+    //- link(rel='icon', type='image/png', sizes='32x32', href= src.img + 'favicon/favicon-32x32.png')
+    //- link(rel='icon', type='image/png', sizes='16x16', href= src.img + 'favicon/favicon-16x16.png')
+    //- link(rel='manifest', href= src.img + 'favicon/site.webmanifest')
+    //- link(rel='mask-icon', href= src.img + 'favicon/safari-pinned-tab.svg', color='#5bbad5')
+    //- meta(name='msapplication-TileColor', content='#5bbad5')
+    //- meta(name='theme-color', content='#000')
+    //- meta(name='msapplication-navbutton-color', content='#000')
+    //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+
+    title Meteor - Auto
+
+    //- link(rel="stylesheet", href="style.css")
+    //- block meta
+    //-   meta(name="description", content="metaDescription")
+    //-   meta(name="keywords", content="metaKeywords")
+
+    //- block head
+    //-   //- link(rel="stylesheet", href= src.css + 'style.css')
+    //-   script
+    //-     include ../js/script.js
+
+  body.body
+    //- noscript У вас отключен JavaScript.
+
+
+    +topline
+    +header
+    main.main.js-main
+      block content
+    +footer
+    +aside
+      //- block templates
+
+      //- script(src= src.js + 'bundle.js')
+
+      //- block scripts

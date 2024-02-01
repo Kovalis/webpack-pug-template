@@ -1,0 +1,48 @@
+@import 'descriptions';
+
+.wrap {
+  width: 100%;
+  max-width: @layout-width;
+  padding-inline: @desktop-padding;
+  margin-inline: auto;
+
+  @media @tablet {
+    padding-inline: @tablet-padding;
+  }
+
+  @media @l-mobile {
+    padding-inline: @mobile-padding;
+  }
+
+  &--topline {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  &--footer {
+    display: flex;
+    flex-direction: column;
+    gap: @offset40;
+
+    @media @l-mobile {
+      gap: @offset32;
+    }
+  }
+
+  &--info-figures {
+    display: flex;
+    gap: @offset20;
+    justify-content: center;
+
+    @media @tablet {
+      gap: @offset16;
+    }
+
+    @media @l-mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: @offset32;
+    }
+  }
+}

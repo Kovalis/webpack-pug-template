@@ -1,0 +1,48 @@
+@import "descriptions";
+
+.pagination {
+  &__container {
+    width: min-content;
+    margin: @offset56 auto 0;
+
+    @media @tablet {
+      margin-top: @offset40;
+    }
+
+    @media @l-mobile {
+      margin-top: @offset32;
+    }
+  }
+
+  &__page-btns {
+    display: flex;
+    align-items: center;
+    gap: @offset8;
+
+    @media @tablet {
+      display: none;
+    }
+  }
+
+  &__page-btn {
+    padding: 4px;
+    font-weight: 700;
+
+    &--current {
+      color: @black-30;
+    }
+
+    &--disable {
+      cursor: not-allowed;
+      color: @black-30;
+    }
+  }
+
+  &__btn-more {
+    display: none;
+
+    @media @tablet {
+      display: flex;
+    }
+  }
+}

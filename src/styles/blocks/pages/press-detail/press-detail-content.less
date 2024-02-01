@@ -1,0 +1,134 @@
+@import "descriptions";
+
+.press-detail-content {
+  & > * {
+    width: 65%;
+    margin-inline: 11% 24%;
+
+    @media @l-tablet {
+      margin-inline: 0;
+      width: 100%;
+    }
+  }
+
+  h2, h3, h4, ul {
+    margin-bottom: @offset40;
+
+    @media @tablet {
+      margin-bottom: @offset32;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset16;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  q {
+    color: @black-70;
+    font-style: italic;
+    display: block;
+    padding-left: @offset24;
+    quotes: '' '';
+    position: relative;
+    margin-block: @offset32;
+
+    @media @tablet {
+      margin-block: @offset24;
+    }
+
+    @media @l-mobile {
+      margin-block: @offset16;
+    }
+
+    &:before {
+      background-color: @black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+    }
+
+    &:first-child {
+      margin-top: 0
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      margin-bottom: @offset20;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset16;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    .radius(20);
+    overflow: hidden;
+    margin-inline: 0;
+    width: 89%;
+    margin-block: @offset56;
+
+    @media @tablet {
+      width: 100%;
+      margin-block: @offset40;
+    }
+
+    @media @l-mobile {
+      margin-block: @offset32;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    li {
+      display: block;
+      padding-left: @offset24;
+      position: relative;
+      margin-bottom: @offset10;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        font-weight: 600;
+        position: absolute;
+        top: 0;
+        left: @offset8;
+        content: '·';
+      }
+    }
+  }
+
+  p, ul, ol, q {
+    .fs18-32();
+
+    @media @tablet {
+      .fs15-24();
+    }
+  }
+}

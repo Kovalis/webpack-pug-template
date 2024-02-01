@@ -1,0 +1,34 @@
+@import "descriptions";
+
+.read-more {
+  position: relative;
+
+  &::before {
+    .absX-alignment();
+    top: -@offset56;
+    content: '';
+    width: 100svw;
+    height: 1px;
+    background-color: @line-gray;
+
+    @media @tablet {
+      top: -@offset40;
+    }
+
+    @media @l-mobile {
+      top: -@offset32;
+    }
+  }
+
+  &__title {
+    margin-bottom: @offset56;
+
+    @media @tablet {
+      margin-bottom: @offset40;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset32;
+    }
+  }
+}

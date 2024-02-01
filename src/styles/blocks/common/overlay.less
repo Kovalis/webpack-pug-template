@@ -1,0 +1,16 @@
+@import 'descriptions';
+
+.overlay {
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  background: @black-15;
+  z-index: @z-index-dropdown;
+  display: none;
+
+  &.show {
+    .smooth-show();
+    visibility: visible;
+    animation: blur .7s ease forwards;
+  }
+}

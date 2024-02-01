@@ -1,0 +1,58 @@
+@import "descriptions";
+
+.breadcrumbs {
+  color: @black-70;
+  display: flex;
+  gap: @offset12;
+  padding-block: @offset24;
+
+  @media @tablet {
+    display: none;
+  }
+
+  &__item {
+    .f-center();
+    position: relative;
+
+    & .breadcrumbs__link {
+      padding-right: 35px;
+    }
+
+    &::after {
+      .square(21);
+      .absY-alignment();
+      right: 0;
+      display: block;
+      // background: url("/assets/img/svg/arrow-bread.svg") 0 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    &:last-child {
+      .ellipsis(90ch);
+      pointer-events: none;
+
+      &::after {
+        background: none;
+      }
+
+      & .breadcrumbs__link {
+        padding-right: 0;
+      }
+
+      a {
+        .ellipsis(90ch);
+      }
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        opacity: 0.7;
+
+        &:last-child {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

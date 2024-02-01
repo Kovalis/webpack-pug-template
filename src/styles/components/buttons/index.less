@@ -1,0 +1,232 @@
+@import "descriptions";
+
+.btn {
+  .btn-reset();
+  .transition(background-color);
+  .transition(border-color);
+  .transition(color);
+  .radius(40);
+  .f-center();
+  max-width: max-content;
+  background-clip: @white;
+  color: inherit;
+  border: none;
+  white-space: nowrap;
+
+  &--primary,
+  &--secondary,
+  &--primary-inv,
+  &--secondary-inv {
+    font-size: 16px;
+    line-height: 16px;
+    gap: @offset10;
+    font-weight: 500;
+    height: 44px;
+    padding: @offset12 @offset20;
+
+    @media @large-than-tablet {
+      &:hover {
+        .transition(background-color);
+        .transition(color);
+      }
+    }
+
+    @media @tablet {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 600;
+    }
+
+    .card--accord &, .boiler & {
+      min-width: 177px;
+
+      @media @tablet {
+        min-width: 160px;
+      }
+
+      @media @l-mobile {
+        flex: 1;
+        max-width: unset;
+        min-width: 146px;
+      }
+    }
+  }
+
+  &--primary {
+    background-color: @black;
+    color: @white;
+
+    &:active,
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @black-30;
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        background-color: @black-70;
+      }
+    }
+
+    &:disabled,
+    &.disable {
+      background-color: @gray-bg;
+      color: @black-30;
+    }
+
+    .card--product-detail & {
+      @media @l-mobile {
+        display: none;
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: @white;
+    color: @black;
+    border: 1px solid @black;
+
+    &:active,
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @black-30;
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        border: 1px solid @black-50;
+      }
+    }
+
+    &:disabled,
+    &.disable {
+      border: 1px solid @line-gray;
+      color: @black-30;
+      background-color: @white;
+    }
+  }
+
+  &--primary-inv {
+    background-color: @white;
+    color: @black;
+
+    .card-modal & {
+      @media @tablet {
+        .fs16-24();
+        background-color: @black;
+        color: @white;
+        padding: 4px @offset16;
+      }
+    }
+
+    &:active,
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @black-30;
+      background-color: @white;
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        background-color: @white-70;
+      }
+    }
+
+    &:disabled,
+    &.disable {
+      color: @white-30;
+      background-color: @black-70;
+    }
+  }
+
+  &--secondary-inv {
+    background-color: transparent;
+    color: @white;
+    border: 1px solid @white;
+
+    &:active,
+    &:focus-visible {
+      box-shadow: 0 0 0 2px @black-30;
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        border: 1px solid @white-70;
+      }
+    }
+
+    &:disabled,
+    &.disable {
+      color: @white-30;
+      border: 1px solid @white-30;
+    }
+  }
+
+  &--bg-transparent {
+    background-color: transparent;
+  }
+
+  &--m-size {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+  }
+
+  &--s-size {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    padding: @offset8 @offset16;
+  }
+
+  &--fluid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  &--close {
+    .square(30);
+    max-width: 100%;
+    position: relative;
+
+    &::before {
+      .abs-alignment();
+      .width-height(16, 2);
+      .rotate(45deg);
+      display: block;
+      background-color: @gray-700;
+
+      content: '';
+    }
+
+    &::after {
+      .abs-alignment();
+      .width-height(16, 2);
+      .rotate(-45deg);
+      display: block;
+      background-color: @gray-700;
+      content: '';
+    }
+
+    &:hover {
+      @media @large-than-tablet {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &--go-back {
+    display: none;
+
+    @media @tablet {
+      .fs13-16();
+      color: @black-70;
+      display: inline-flex;
+      align-items: center;
+      gap: @offset8;
+      padding-block: @offset16;
+    }
+
+    @media @l-mobile {
+      padding-block: @offset12;
+    }
+  }
+}

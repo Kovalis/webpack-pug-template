@@ -1,0 +1,29 @@
+@import "descriptions";
+
+.accord {
+  &__btn {
+
+    &--name {
+      text-transform: uppercase;
+    }
+  }
+
+  .active& {
+    margin-bottom: @offset16
+  }
+
+  &__body {
+    display: none;
+
+
+    .active & {
+      animation: showBySlide .3s forwards;
+      display: block;
+    }
+  }
+
+  &__body-subtitle {
+
+  }
+}
+

@@ -1,0 +1,136 @@
+@import "descriptions";
+
+.btn-reset() {
+  .SF();
+  .fs16-24();
+  font-weight: 400;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  color: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  user-select: none;
+  text-decoration: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.square(@num) {
+  display: block;
+  width: @num + 0px;
+  height: @num + 0px;
+}
+
+.width-height(@w, @h) {
+  display: block;
+  width: @w + 0px;
+  height: @h + 0px;
+}
+
+.circle(@num) {
+  .square (@num);
+  border-radius: 100%;
+}
+
+.f-center(@gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: @gap + 0px;
+}
+
+.f-between(@gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: @gap + 0px;
+}
+
+.f-column(@gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: @gap + 0px;
+}
+
+.abs-alignment() {
+  .offset();
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.absX-alignment() {
+  .offsetX();
+  position: absolute;
+  left: 50%;
+}
+
+.absY-alignment() {
+  .offsetY();
+  position: absolute;
+  top: 50%;
+}
+
+.hidden-field() {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.scroll-touch(@direction: y) {
+  -webkit-overflow-scrolling: touch;
+
+  & when (@direction = x) {
+    overflow-x: auto;
+  }
+
+  & when (@direction = y) {
+    overflow-y: auto;
+  }
+}
+
+.object-fit(@width: 100%, @height: 100%, @fit: cover) {
+  width: @width;
+  height: @height;
+  object-fit: @fit;
+}
+
+.aspect-ratio(@width, @height) {
+  padding-top: (@height / @width) * 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.media-print-none {
+  @media print {
+    display: none;
+  }
+}
+
+.triangle(@direction, @width, @height, @color: @black) {
+  content: '';
+  position: absolute;
+  border: solid transparent;
+
+  & when (@direction = top) {
+    border-width: 0 @width / 2 + 0px @height + 0px;
+    border-bottom-color: @color;
+  }
+
+  & when (@direction = right) {
+    border-width: @height / 2 + 0px 0 @height / 2 + 0px @width + 0px;
+    border-left-color: @color;
+  }
+
+  & when (@direction = bottom) {
+    border-width: @height + 0px @width / 2 + 0px 0;
+    border-top-color: @color;
+  }
+
+  & when (@direction = left) {
+    border-width: @height / 2 + 0px @width + 0px @height / 2 + 0px 0;
+    border-right-color: @color;
+  }
+}

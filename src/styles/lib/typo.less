@@ -1,0 +1,234 @@
+@import "descriptions";
+
+.SF() {
+  font-family: "SF", Marmelad, "Lucida Grande", Arial, "Hiragino Sans GB",
+  Georgia, sans-serif;
+}
+
+.h1 {
+  .fs36-44();
+  font-weight: 600;
+  letter-spacing: -0.14px;
+
+  @media @tablet {
+    .fs22-28();
+    letter-spacing: -0.3px;
+  }
+
+  &--press-detail {
+    max-width: 80%;
+    margin-bottom: @offset24;
+
+    @media @tablet {
+      max-width: 100%;
+      margin-bottom: -@offset8;
+    }
+
+    @media @l-mobile {
+      margin-bottom: -@offset12;
+    }
+  }
+
+  &--buy {
+    margin-bottom: @offset16;
+  }
+
+  .send-success & {
+    text-align: center;
+    color: green;
+  }
+
+  .send-error & {
+    text-align: center;
+    color: red;
+  }
+}
+
+.h2 {
+  .fs32-40();
+  font-weight: 700;
+
+  @media @tablet {
+    .fs20-24();
+  }
+}
+
+.h3 {
+  .fs28-36();
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+
+  @media @tablet {
+    .fs18-24()
+  }
+}
+
+.h4 {
+  .fs24-32();
+  font-weight: 600;
+
+  @media @tablet {
+    .fs16-20();
+  }
+
+  .press-detail-content&:first-child {
+    font-weight: 600;
+  }
+}
+
+.h5 {
+  .fs18-24();
+  font-weight: 600;
+
+  @media @tablet {
+    .fs14-16();
+  }
+}
+
+.h6 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.fs10-14() {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.fs12-16() {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.fs12-20() {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.fs13-16() {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.fs14-16() {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.fs14-20() {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.fs15-24() {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.fs16-20() {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.fs16-24() {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.fs18-24() {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+.fs18-28() {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.fs18-32() {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.fs20-24() {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.fs20-28() {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.fs22-28() {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.fs22-32() {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+.fs24-32() {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.fs26-32() {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.fs28-36() {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.fs30-36() {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.fs32-40() {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+
+.fs34-44 () {
+  font-size: 34px;
+  line-height: 44px;
+}
+
+.fs36-44 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.fs80-80 {
+  font-size: 80px;
+  line-height: 80px;
+
+  @media @tablet {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+
+.ellipsis(@char-count:unset) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: @char-count;
+}
+
+.multiline-ellipsis(@line-count: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line-count;
+  overflow: hidden;
+}

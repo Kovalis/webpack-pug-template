@@ -1,0 +1,97 @@
+@import "descriptions";
+
+.transition(@prop: all, @duration: .1s, @function: linear, @delay: 0s) {
+  transition+: @arguments;
+}
+
+.smooth-show(@t: 0.2s, @display: block) {
+  animation: smooth-show @t linear forwards;
+  display: @display;
+}
+
+.opacity-hover() {
+  @media @only-desktop {
+    .transition(opacity);
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+.show {
+  .smooth-show(.2s);
+}
+
+@keyframes smooth-show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blur {
+  0% {
+    backdrop-filter: blur(10px) opacity(0);
+  }
+
+  100% {
+    backdrop-filter: blur(10px) opacity(1);
+  }
+}
+
+@keyframes showBySlide {
+  0% {
+    transform: translateY(-100%);
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    position: relative;
+    display: block;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    pointer-events: initial;
+    visibility: visible;
+    position: relative;
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes hideBySlide {
+  0% {
+    transform: translateY(0);
+    pointer-events: none;
+    visibility: visible;
+    display: block;
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  80% {
+
+    display: none;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,80 @@
+@import "../descriptions";
+
+html {
+  height: 100%;
+}
+
+body {
+  .SF();
+  .fs16-24();
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &.body-lock {
+    overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+    width: 100%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &--press-detail {
+    overflow: hidden;
+  }
+}
+
+.v-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  &--b-r {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.z-index {
+  z-index: 1 !important;
+}
+
+.over-scroll {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.over-scroll-y {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ellipsis--2 {
+  .multiline-ellipsis(2);
+}
+
+.ellipsis--3 {
+  .multiline-ellipsis(3);
+
+  .card--link & {
+    @media @s-tablet {
+      .multiline-ellipsis(4);
+    }
+  }
+}
+
+.no-print {
+  .media-print-none();
+}
